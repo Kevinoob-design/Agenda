@@ -4,6 +4,7 @@ using System.Linq;
 using System.Windows.Forms;
 using Controller;
 using Model;
+using WindowsFormsApp1.View;
 
 namespace View
 {
@@ -126,6 +127,18 @@ namespace View
             info.Add("str", txtSearch.Text);
             init(info, sp.ToString());
             info.Clear();
+        }
+
+      
+        private void btnAddEvent_Click_1(object sender, EventArgs e)
+        {
+            
+            
+        }
+
+        private void AgendaView_Load(object sender, EventArgs e)
+        {
+
         }
 
         //public void BringFormChild(object FormHijo, TableLayoutPanel panel)
