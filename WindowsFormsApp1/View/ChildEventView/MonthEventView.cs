@@ -16,6 +16,15 @@ namespace View.ChildEventView
 {
     public partial class MonthEventView : Form
     {
+        string day;
+        string month;
+        string hourStart;
+        string hourEnd;
+
+        List<DateTime> timeStart = new List<DateTime>();
+
+        
+
         public MonthEventView(ISelfConfigureCell cell)
         {
             InitializeComponent();
@@ -26,11 +35,11 @@ namespace View.ChildEventView
 
             eventList = Conexion.Load<Event>(null, "Select_Events");
 
-            //foreach (var item in eventList)
-            //{
-            //    MessageBox.Show(item.startDate);
-            //    MessageBox.Show(item.endDate);
-            //}
+            foreach (var item in eventList)
+            {
+                timeStart.Add(Convert.ToDateTime(item.startDate));
+
+            }
 
             for (int i = 1; i <= DateTime.DaysInMonth(2019, 12); i++)
             {
