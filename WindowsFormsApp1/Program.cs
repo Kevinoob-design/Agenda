@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using View.ChildEventView;
 using View.ChildEventView.ChildMonthView;
 using View.ChildEventView.ChildYearView;
+using WindowsFormsApp1.View;
 
 namespace View
 {
@@ -20,7 +21,7 @@ namespace View
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Application.Run(new ());
+            Application.Run(new EventList());
             //Application.Run(new MonthEventView(new MonthView()));
 
             //Application.Run(new DetailedEventView());

@@ -401,7 +401,7 @@
             this.PanelOverview.Name = "PanelOverview";
             this.PanelOverview.RowCount = 1;
             this.PanelOverview.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.PanelOverview.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.PanelOverview.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 410F));
             this.PanelOverview.Size = new System.Drawing.Size(812, 410);
             this.PanelOverview.TabIndex = 2;
             // 
