@@ -132,7 +132,8 @@ namespace View
       
         private void btnAddEvent_Click_1(object sender, EventArgs e)
         {
-            
+            EventList d = new EventList();
+            d.Show();
             
         }
 
