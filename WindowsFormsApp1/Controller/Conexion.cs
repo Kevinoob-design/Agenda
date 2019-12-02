@@ -20,17 +20,17 @@ namespace Controller
        static Conexion()
         {
             //SourcePC = "Data source = Hector-Macbook;";
-            SourcePC = "Data source = Hector-PC;";
+            //SourcePC = "Data source = Hector-PC;";
             //InitialCat = "Initial catalog = Agenda;";
+            //InitialCat = "Initial catalog = AGENDAPrueba;";
+            //IntSecuirity = "Integrated security = true";
+
+            SourcePC = "Data source = 2620:9b::1907:5199,1433;";
             InitialCat = "Initial catalog = AGENDAPrueba;";
-            IntSecuirity = "Integrated security = true";
+            UserID = "User ID = Wander; Password = 123456789;";
 
-            //SourcePC = "Data source = 10.0.0.67,1433;";
-            //InitialCat = "Initial catalog = Agenda;";
-            //UserID = "User ID = Wander; Password = 123456789;";
-
-            con = new SqlConnection(SourcePC + InitialCat + IntSecuirity);
-            //con = new SqlConnection(SourcePC + InitialCat + UserID);
+            //con = new SqlConnection(SourcePC + InitialCat + IntSecuirity);
+            con = new SqlConnection(SourcePC + InitialCat + UserID);
             con.Open();
         }
 

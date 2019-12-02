@@ -20,8 +20,8 @@ namespace View
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            //Application.Run(new AgendaView());
-            Application.Run(new MonthEventView(new MonthView()));
+            Application.Run(new AgendaView());
+            //Application.Run(new MonthEventView(new MonthView()));
 
             //Application.Run(new DetailedEventView());
             //Application.Run(new YearEventView(new YearView()));
