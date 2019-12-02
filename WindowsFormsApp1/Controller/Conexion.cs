@@ -86,5 +86,18 @@ namespace Controller
 
             cmd.ExecuteNonQuery();
         }
+
+        public static void LoadData(DataGridView Dgv)
+        {
+            SqlDataAdapter da = new SqlDataAdapter("exec Select_Events_Completly", con);
+
+            DataSet ds = new DataSet();
+
+            
+            da.Fill(ds, "EVENTS");
+            Dgv.DataSource = ds;
+            Dgv.DataMember = "EVENTS";    
+            
+        }
     }
 }

@@ -46,7 +46,7 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCreate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnAddEvent = new System.Windows.Forms.Button();
             this.PanelOverview = new System.Windows.Forms.TableLayoutPanel();
             this.PanelMainContactInfo = new System.Windows.Forms.TableLayoutPanel();
             this.groupBoxContactInfo = new System.Windows.Forms.GroupBox();
@@ -313,7 +313,7 @@
             this.PanelActions.Controls.Add(this.btnSave, 0, 0);
             this.PanelActions.Controls.Add(this.btnCreate, 1, 0);
             this.PanelActions.Controls.Add(this.btnDelete, 2, 0);
-            this.PanelActions.Controls.Add(this.button4, 3, 0);
+            this.PanelActions.Controls.Add(this.btnAddEvent, 3, 0);
             this.PanelActions.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelActions.Location = new System.Drawing.Point(3, 569);
             this.PanelActions.Name = "PanelActions";
@@ -373,20 +373,21 @@
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.UpdateBDD);
             // 
-            // button4
+            // btnAddEvent
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(55)))), ((int)(((byte)(76)))));
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.SystemColors.Control;
-            this.button4.Location = new System.Drawing.Point(612, 3);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(197, 28);
-            this.button4.TabIndex = 11;
-            this.button4.Text = "Add Event";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnAddEvent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(55)))), ((int)(((byte)(76)))));
+            this.btnAddEvent.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddEvent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnAddEvent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddEvent.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddEvent.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnAddEvent.Location = new System.Drawing.Point(612, 3);
+            this.btnAddEvent.Name = "btnAddEvent";
+            this.btnAddEvent.Size = new System.Drawing.Size(197, 28);
+            this.btnAddEvent.TabIndex = 11;
+            this.btnAddEvent.Text = "Add Event";
+            this.btnAddEvent.UseVisualStyleBackColor = false;
+            this.btnAddEvent.Click += new System.EventHandler(this.btnAddEvent_Click_1);
             // 
             // PanelOverview
             // 
@@ -400,6 +401,7 @@
             this.PanelOverview.Name = "PanelOverview";
             this.PanelOverview.RowCount = 1;
             this.PanelOverview.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.PanelOverview.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.PanelOverview.Size = new System.Drawing.Size(812, 410);
             this.PanelOverview.TabIndex = 2;
             // 
@@ -765,6 +767,7 @@
             this.Name = "AgendaView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AgendaView";
+            this.Load += new System.EventHandler(this.AgendaView_Load);
             this.PanelTittleCenter.ResumeLayout(false);
             this.PanelTittleClose.ResumeLayout(false);
             this.PanelTittleClose.PerformLayout();
@@ -809,7 +812,7 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCreate;
         private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnAddEvent;
         private System.Windows.Forms.TableLayoutPanel PanelOverview;
         private System.Windows.Forms.TableLayoutPanel PanelMainContactInfo;
         private System.Windows.Forms.GroupBox groupBoxContactInfo;

@@ -114,6 +114,12 @@
     <Compile Include="View\ChildEventView\YearEventView.Designer.cs">
       <DependentUpon>YearEventView.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\EventList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\EventList.Designer.cs">
+      <DependentUpon>EventList.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\EventsView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -149,6 +155,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\ChildEventView\YearEventView.resx">
       <DependentUpon>YearEventView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\EventList.resx">
+      <DependentUpon>EventList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\EventsView.resx">
       <DependentUpon>EventsView.cs</DependentUpon>
