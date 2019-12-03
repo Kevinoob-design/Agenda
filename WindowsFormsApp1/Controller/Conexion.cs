@@ -127,14 +127,12 @@ namespace Controller
             Dgv.DataSource = ds;
             Dgv.DataMember = "CONTACTS";
 
-            
-
         }
 
         public static void LoadDataContactRemove(DataGridView Dgv,int eventID)
         {
 
-            SqlDataAdapter da = new SqlDataAdapter($"exec  Select_Contact_Info", con);
+            SqlDataAdapter da = new SqlDataAdapter($"exec  Select__Event_Contact {eventID}", con);
 
             DataSet ds = new DataSet();
 
@@ -143,7 +141,6 @@ namespace Controller
             Dgv.DataSource = ds;
             Dgv.DataMember = "CONTACTS";
 
-            MessageBox.Show("Datos incertados");
         }
 
         public static void EliminarRelacion(int eventID)
@@ -157,7 +154,18 @@ namespace Controller
             MessageBox.Show("Evento Removido de lista");
         }
 
-        public static void InsertarRelacion(int contact,int events)
+        public static void EliminarRelacionEvento(int contactoID)
+        {
+            dr.Close();
+            cmd = con.CreateCommand();
+            cmd.CommandText = "EXECUTE R__Eliminar__Contact_in_Event @contactoID";
+            cmd.Parameters.AddWithValue("@contactoID", contactoID);
+            cmd.ExecuteNonQuery();
+
+            MessageBox.Show("Contacto Removido de lista");
+        }
+
+        public static void InsertarRelacion(int contact, int events)
         {
             dr.Close();
             cmd = con.CreateCommand();
@@ -167,9 +175,11 @@ namespace Controller
             cmd.ExecuteNonQuery();
 
             MessageBox.Show("Evento Incertado");
-            
+
         }
 
+        
+        
 
         public static string countRows(string contactID)
         {

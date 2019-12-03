@@ -29,6 +29,8 @@ namespace WindowsFormsApp1.View
         {
             var contact = dgvContactList.CurrentRow.Cells["contactID"].Value.ToString();
             Conexion.InsertarRelacion(Convert.ToInt32 (contact), Convert.ToInt32(eventoID) );
+
+            this.Close();
         }
 
         private void ContactList_Load(object sender, EventArgs e)
