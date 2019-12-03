@@ -118,6 +118,8 @@ namespace View
             {
                 setValues<Contact>(listControllers[i], listBoxContacts.SelectedIndex);
             }
+
+            AgendaView_Load(null, null);
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
@@ -127,6 +129,8 @@ namespace View
             info.Add("str", txtSearch.Text);
             init(info, sp.ToString());
             info.Clear();
+
+            
         }
 
       
@@ -134,11 +138,23 @@ namespace View
         {
             EventList d = new EventList(contacts[listBoxContacts.SelectedIndex]);
             d.Show();
+
+            AgendaView_Load(null, null);
         }
 
         private void AgendaView_Load(object sender, EventArgs e)
         {
+            var rowsAmount = Conexion.countRows(contacts[listBoxContacts.SelectedIndex].contactID);
+            lblEventCheck.Text = rowsAmount + " Events "; 
+                                
+        }
 
+        private void btnCheckEvent_Click(object sender, EventArgs e)
+        {
+            Event_RelatedList d = new Event_RelatedList(contacts[listBoxContacts.SelectedIndex]);
+            d.Show();
+
+            AgendaView_Load(null, null);
         }
 
         //public void BringFormChild(object FormHijo, TableLayoutPanel panel)
