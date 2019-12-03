@@ -180,13 +180,13 @@ namespace View
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            ContactListRemove ct = new ContactListRemove();
+            ContactListRemove ct = new ContactListRemove(listEvent[listBoxContacts.SelectedIndex]);
             ct.Show();
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-            ContactListRemove ctr = new ContactListRemove();
+            ContactListRemove ctr = new ContactListRemove(listEvent[listBoxContacts.SelectedIndex]);
             ctr.Show();
         
         }

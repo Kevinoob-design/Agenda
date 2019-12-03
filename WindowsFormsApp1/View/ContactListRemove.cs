@@ -19,9 +19,11 @@ namespace WindowsFormsApp1.View
             InitializeComponent();
         }
 
-        public ContactListRemove(Contact contact)
+        public ContactListRemove(Event evento)
         {
+            InitializeComponent();
 
+            MessageBox.Show(evento.eventID.ToString());
         }
         private void btnREmoveContact_Click(object sender, EventArgs e)
         {
