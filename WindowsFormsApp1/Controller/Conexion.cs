@@ -167,7 +167,7 @@ namespace Controller
 
         public static void InsertarRelacion(int contact, int events)
         {
-            MessageBox.Show(contact.ToString(), events.ToString());
+     
             dr.Close();
             cmd = con.CreateCommand();
             cmd.CommandText = "EXECUTE R__Insertar__Contacts_Events @contactID,@eventID ";
