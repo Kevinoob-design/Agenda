@@ -39,24 +39,28 @@
             this.listBoxContacts = new System.Windows.Forms.ListBox();
             this.txtFiler = new System.Windows.Forms.TextBox();
             this.panelDueDateHorsFre = new System.Windows.Forms.TableLayoutPanel();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.panelHorsFrequency = new System.Windows.Forms.TableLayoutPanel();
             this.comboBoxTimeStart = new System.Windows.Forms.ComboBox();
             this.comboBoxTimeEnd = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.panelLabels = new System.Windows.Forms.TableLayoutPanel();
-            this.Start = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.comboBoxRepeat = new System.Windows.Forms.ComboBox();
             this.panelPriority = new System.Windows.Forms.TableLayoutPanel();
             this.lblPriority = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxAlert = new System.Windows.Forms.ComboBox();
             this.txtTittle = new System.Windows.Forms.TextBox();
-            this.txtLocation = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
+            this.panelDetailsLocation = new System.Windows.Forms.TableLayoutPanel();
+            this.txtDetails = new System.Windows.Forms.TextBox();
+            this.txtLocation = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.Start = new System.Windows.Forms.Label();
+            this.panelLabels = new System.Windows.Forms.TableLayoutPanel();
+            this.panelDueDateLoad = new System.Windows.Forms.TableLayoutPanel();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.btnLoad = new System.Windows.Forms.Button();
             this.MainPanel.SuspendLayout();
             this.PanelTittlePriority.SuspendLayout();
             this.PanelStartEndHours.SuspendLayout();
@@ -65,8 +69,10 @@
             this.panelAddDelete.SuspendLayout();
             this.panelDueDateHorsFre.SuspendLayout();
             this.panelHorsFrequency.SuspendLayout();
-            this.panelLabels.SuspendLayout();
             this.panelPriority.SuspendLayout();
+            this.panelDetailsLocation.SuspendLayout();
+            this.panelLabels.SuspendLayout();
+            this.panelDueDateLoad.SuspendLayout();
             this.SuspendLayout();
             // 
             // MainPanel
@@ -76,7 +82,7 @@
             this.MainPanel.Controls.Add(this.PanelTittlePriority, 0, 0);
             this.MainPanel.Controls.Add(this.PanelStartEndHours, 0, 3);
             this.MainPanel.Controls.Add(this.PanelDueDateNewEvent, 0, 2);
-            this.MainPanel.Controls.Add(this.txtLocation, 0, 1);
+            this.MainPanel.Controls.Add(this.panelDetailsLocation, 0, 1);
             this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainPanel.Location = new System.Drawing.Point(0, 0);
             this.MainPanel.Name = "MainPanel";
@@ -198,6 +204,7 @@
             this.listBoxContacts.Name = "listBoxContacts";
             this.listBoxContacts.Size = new System.Drawing.Size(302, 164);
             this.listBoxContacts.TabIndex = 1;
+            this.listBoxContacts.Tag = "invites";
             // 
             // txtFiler
             // 
@@ -211,9 +218,9 @@
             // 
             this.panelDueDateHorsFre.ColumnCount = 1;
             this.panelDueDateHorsFre.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.panelDueDateHorsFre.Controls.Add(this.monthCalendar1, 0, 0);
             this.panelDueDateHorsFre.Controls.Add(this.panelHorsFrequency, 0, 1);
             this.panelDueDateHorsFre.Controls.Add(this.panelLabels, 0, 2);
+            this.panelDueDateHorsFre.Controls.Add(this.panelDueDateLoad, 0, 0);
             this.panelDueDateHorsFre.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDueDateHorsFre.Location = new System.Drawing.Point(317, 3);
             this.panelDueDateHorsFre.Name = "panelDueDateHorsFre";
@@ -224,13 +231,6 @@
             this.panelDueDateHorsFre.Size = new System.Drawing.Size(309, 235);
             this.panelDueDateHorsFre.TabIndex = 2;
             // 
-            // monthCalendar1
-            // 
-            this.monthCalendar1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.monthCalendar1.Location = new System.Drawing.Point(41, 9);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 1;
-            // 
             // panelHorsFrequency
             // 
             this.panelHorsFrequency.ColumnCount = 3;
@@ -239,7 +239,7 @@
             this.panelHorsFrequency.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.panelHorsFrequency.Controls.Add(this.comboBoxTimeStart, 0, 0);
             this.panelHorsFrequency.Controls.Add(this.comboBoxTimeEnd, 1, 0);
-            this.panelHorsFrequency.Controls.Add(this.comboBox3, 2, 0);
+            this.panelHorsFrequency.Controls.Add(this.comboBoxRepeat, 2, 0);
             this.panelHorsFrequency.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelHorsFrequency.Location = new System.Drawing.Point(3, 183);
             this.panelHorsFrequency.Name = "panelHorsFrequency";
@@ -305,6 +305,7 @@
             this.comboBoxTimeStart.Name = "comboBoxTimeStart";
             this.comboBoxTimeStart.Size = new System.Drawing.Size(95, 21);
             this.comboBoxTimeStart.TabIndex = 0;
+            this.comboBoxTimeStart.Tag = "startDate";
             this.comboBoxTimeStart.SelectedIndexChanged += new System.EventHandler(this.comboBoxTimeStart_SelectedIndexChanged);
             // 
             // comboBoxTimeEnd
@@ -315,80 +316,24 @@
             this.comboBoxTimeEnd.Name = "comboBoxTimeEnd";
             this.comboBoxTimeEnd.Size = new System.Drawing.Size(95, 21);
             this.comboBoxTimeEnd.TabIndex = 1;
+            this.comboBoxTimeEnd.Tag = "endDate";
             // 
-            // comboBox3
+            // comboBoxRepeat
             // 
-            this.comboBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(205, 3);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(95, 21);
-            this.comboBox3.TabIndex = 2;
-            // 
-            // panelLabels
-            // 
-            this.panelLabels.ColumnCount = 3;
-            this.panelLabels.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.panelLabels.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.panelLabels.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.panelLabels.Controls.Add(this.Start, 0, 2);
-            this.panelLabels.Controls.Add(this.label2, 1, 2);
-            this.panelLabels.Controls.Add(this.label3, 2, 2);
-            this.panelLabels.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelLabels.Location = new System.Drawing.Point(3, 218);
-            this.panelLabels.Name = "panelLabels";
-            this.panelLabels.RowCount = 3;
-            this.panelLabels.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.panelLabels.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.panelLabels.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.panelLabels.Size = new System.Drawing.Size(303, 14);
-            this.panelLabels.TabIndex = 3;
-            // 
-            // Start
-            // 
-            this.Start.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Start.AutoSize = true;
-            this.Start.Location = new System.Drawing.Point(3, -6);
-            this.Start.Name = "Start";
-            this.Start.Size = new System.Drawing.Size(94, 20);
-            this.Start.TabIndex = 0;
-            this.Start.Text = "Start";
-            this.Start.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(103, -6);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(94, 20);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "End";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(203, -6);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(97, 20);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Frecuency";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.comboBoxRepeat.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.comboBoxRepeat.FormattingEnabled = true;
+            this.comboBoxRepeat.Location = new System.Drawing.Point(205, 3);
+            this.comboBoxRepeat.Name = "comboBoxRepeat";
+            this.comboBoxRepeat.Size = new System.Drawing.Size(95, 21);
+            this.comboBoxRepeat.TabIndex = 2;
+            this.comboBoxRepeat.Tag = "frequency";
             // 
             // panelPriority
             // 
             this.panelPriority.ColumnCount = 1;
             this.panelPriority.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.panelPriority.Controls.Add(this.lblPriority, 0, 0);
-            this.panelPriority.Controls.Add(this.comboBox1, 0, 1);
+            this.panelPriority.Controls.Add(this.comboBoxAlert, 0, 1);
             this.panelPriority.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelPriority.Location = new System.Drawing.Point(506, 3);
             this.panelPriority.Name = "panelPriority";
@@ -412,14 +357,15 @@
             this.lblPriority.Text = "Priority";
             this.lblPriority.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // comboBox1
+            // comboBoxAlert
             // 
-            this.comboBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(3, 27);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(114, 21);
-            this.comboBox1.TabIndex = 3;
+            this.comboBoxAlert.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.comboBoxAlert.FormattingEnabled = true;
+            this.comboBoxAlert.Location = new System.Drawing.Point(3, 27);
+            this.comboBoxAlert.Name = "comboBoxAlert";
+            this.comboBoxAlert.Size = new System.Drawing.Size(114, 21);
+            this.comboBoxAlert.TabIndex = 3;
+            this.comboBoxAlert.Tag = "priority";
             // 
             // txtTittle
             // 
@@ -430,19 +376,9 @@
             this.txtTittle.Name = "txtTittle";
             this.txtTittle.Size = new System.Drawing.Size(497, 48);
             this.txtTittle.TabIndex = 2;
+            this.txtTittle.Tag = "tittle";
             this.txtTittle.Text = "TITTLE";
             this.txtTittle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtLocation
-            // 
-            this.txtLocation.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLocation.Location = new System.Drawing.Point(3, 63);
-            this.txtLocation.Multiline = true;
-            this.txtLocation.Name = "txtLocation";
-            this.txtLocation.Size = new System.Drawing.Size(629, 70);
-            this.txtLocation.TabIndex = 4;
-            this.txtLocation.Text = "LOCATION";
             // 
             // btnSave
             // 
@@ -454,6 +390,7 @@
             this.btnSave.TabIndex = 0;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnUpdate
             // 
@@ -488,6 +425,137 @@
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
             // 
+            // panelDetailsLocation
+            // 
+            this.panelDetailsLocation.ColumnCount = 2;
+            this.panelDetailsLocation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelDetailsLocation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelDetailsLocation.Controls.Add(this.txtLocation, 1, 0);
+            this.panelDetailsLocation.Controls.Add(this.txtDetails, 0, 0);
+            this.panelDetailsLocation.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelDetailsLocation.Location = new System.Drawing.Point(3, 63);
+            this.panelDetailsLocation.Name = "panelDetailsLocation";
+            this.panelDetailsLocation.RowCount = 1;
+            this.panelDetailsLocation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelDetailsLocation.Size = new System.Drawing.Size(629, 70);
+            this.panelDetailsLocation.TabIndex = 4;
+            // 
+            // txtDetails
+            // 
+            this.txtDetails.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDetails.Location = new System.Drawing.Point(3, 3);
+            this.txtDetails.Multiline = true;
+            this.txtDetails.Name = "txtDetails";
+            this.txtDetails.Size = new System.Drawing.Size(308, 64);
+            this.txtDetails.TabIndex = 0;
+            this.txtDetails.Tag = "details";
+            this.txtDetails.Text = "DETAILS";
+            // 
+            // txtLocation
+            // 
+            this.txtLocation.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLocation.Location = new System.Drawing.Point(317, 3);
+            this.txtLocation.Multiline = true;
+            this.txtLocation.Name = "txtLocation";
+            this.txtLocation.Size = new System.Drawing.Size(309, 64);
+            this.txtLocation.TabIndex = 5;
+            this.txtLocation.Tag = "location";
+            this.txtLocation.Text = "LOCATION";
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(203, -6);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(97, 20);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Frecuency";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(103, -6);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(94, 20);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "End";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Start
+            // 
+            this.Start.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Start.AutoSize = true;
+            this.Start.Location = new System.Drawing.Point(3, -6);
+            this.Start.Name = "Start";
+            this.Start.Size = new System.Drawing.Size(94, 20);
+            this.Start.TabIndex = 0;
+            this.Start.Text = "Start";
+            this.Start.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panelLabels
+            // 
+            this.panelLabels.ColumnCount = 3;
+            this.panelLabels.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.panelLabels.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.panelLabels.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.panelLabels.Controls.Add(this.Start, 0, 2);
+            this.panelLabels.Controls.Add(this.label2, 1, 2);
+            this.panelLabels.Controls.Add(this.label3, 2, 2);
+            this.panelLabels.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelLabels.Location = new System.Drawing.Point(3, 218);
+            this.panelLabels.Name = "panelLabels";
+            this.panelLabels.RowCount = 3;
+            this.panelLabels.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelLabels.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelLabels.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.panelLabels.Size = new System.Drawing.Size(303, 14);
+            this.panelLabels.TabIndex = 3;
+            // 
+            // panelDueDateLoad
+            // 
+            this.panelDueDateLoad.ColumnCount = 2;
+            this.panelDueDateLoad.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
+            this.panelDueDateLoad.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.panelDueDateLoad.Controls.Add(this.monthCalendar1, 0, 0);
+            this.panelDueDateLoad.Controls.Add(this.btnLoad, 1, 0);
+            this.panelDueDateLoad.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelDueDateLoad.Location = new System.Drawing.Point(3, 3);
+            this.panelDueDateLoad.Name = "panelDueDateLoad";
+            this.panelDueDateLoad.RowCount = 1;
+            this.panelDueDateLoad.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.panelDueDateLoad.Size = new System.Drawing.Size(303, 174);
+            this.panelDueDateLoad.TabIndex = 4;
+            // 
+            // monthCalendar1
+            // 
+            this.monthCalendar1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.monthCalendar1.Location = new System.Drawing.Point(9, 9);
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.TabIndex = 2;
+            // 
+            // btnLoad
+            // 
+            this.btnLoad.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnLoad.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoad.Location = new System.Drawing.Point(245, 3);
+            this.btnLoad.Name = "btnLoad";
+            this.btnLoad.Size = new System.Drawing.Size(55, 168);
+            this.btnLoad.TabIndex = 3;
+            this.btnLoad.Text = "L\r\nO\r\nA\r\nD";
+            this.btnLoad.UseVisualStyleBackColor = true;
+            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
+            // 
             // EventsView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -497,7 +565,6 @@
             this.Name = "EventsView";
             this.Text = "EventsView";
             this.MainPanel.ResumeLayout(false);
-            this.MainPanel.PerformLayout();
             this.PanelTittlePriority.ResumeLayout(false);
             this.PanelTittlePriority.PerformLayout();
             this.PanelStartEndHours.ResumeLayout(false);
@@ -507,10 +574,13 @@
             this.panelAddDelete.ResumeLayout(false);
             this.panelDueDateHorsFre.ResumeLayout(false);
             this.panelHorsFrequency.ResumeLayout(false);
-            this.panelLabels.ResumeLayout(false);
-            this.panelLabels.PerformLayout();
             this.panelPriority.ResumeLayout(false);
             this.panelPriority.PerformLayout();
+            this.panelDetailsLocation.ResumeLayout(false);
+            this.panelDetailsLocation.PerformLayout();
+            this.panelLabels.ResumeLayout(false);
+            this.panelLabels.PerformLayout();
+            this.panelDueDateLoad.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -528,23 +598,27 @@
         private System.Windows.Forms.ListBox listBoxContacts;
         private System.Windows.Forms.TextBox txtFiler;
         private System.Windows.Forms.TableLayoutPanel panelDueDateHorsFre;
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.TableLayoutPanel panelHorsFrequency;
         private System.Windows.Forms.ComboBox comboBoxTimeStart;
         private System.Windows.Forms.ComboBox comboBoxTimeEnd;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.TableLayoutPanel panelLabels;
-        private System.Windows.Forms.Label Start;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox comboBoxRepeat;
         private System.Windows.Forms.TableLayoutPanel panelPriority;
         private System.Windows.Forms.Label lblPriority;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBoxAlert;
         private System.Windows.Forms.TextBox txtTittle;
-        private System.Windows.Forms.TextBox txtLocation;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.TableLayoutPanel panelDetailsLocation;
+        private System.Windows.Forms.TextBox txtLocation;
+        private System.Windows.Forms.TextBox txtDetails;
+        private System.Windows.Forms.TableLayoutPanel panelLabels;
+        private System.Windows.Forms.Label Start;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TableLayoutPanel panelDueDateLoad;
+        private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.Button btnLoad;
     }
 }

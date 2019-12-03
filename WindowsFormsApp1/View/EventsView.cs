@@ -7,32 +7,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Model;
+using Controller;
 
 namespace View
 {
     public partial class EventsView : Form
     {
+        Dictionary<string, string> info = new Dictionary<string, string>();
+
         public EventsView()
         {
             InitializeComponent();
 
             refill();
 
-            comboBoxTimeEnd.SelectedIndex = comboBoxTimeStart.SelectedIndex;
-
-            List<object> list = new List<object>();
-
-            for (int i = 0; i < comboBoxTimeEnd.SelectedIndex; i++)
+            foreach (var item in Enum.GetValues(typeof(Repeat)))
             {
-                int memory = comboBoxTimeEnd.SelectedIndex;
-                comboBoxTimeEnd.SelectedIndex = i;
-                list.Add(comboBoxTimeEnd.SelectedItem);
-                comboBoxTimeEnd.SelectedIndex = memory;
+                comboBoxRepeat.Items.Add(item);
+                comboBoxRepeat.SelectedIndex = 0;
             }
-            foreach (var item in list)
+            foreach (var item in Enum.GetValues(typeof(Alert)))
             {
-                comboBoxTimeEnd.Items.Remove(item);
-                comboBoxTimeEnd.Items.Add(item);
+                comboBoxAlert.Items.Add(item);
+                comboBoxAlert.SelectedIndex = 0;
             }
         }
 
@@ -65,6 +63,60 @@ namespace View
             {
                 comboBoxTimeEnd.Items.Remove(item);
                 comboBoxTimeEnd.Items.Add(item);
+            }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            getChildWithValue(MainPanel);
+
+            //foreach (var item in info)
+            //{
+            //    MessageBox.Show(item.ToString());
+            //}
+
+            Conexion.Save(info, "SP_Insertar_Eventos");
+            info.Clear();
+        }
+
+        private void btnLoad_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void getChildWithValue(params Control[] control)
+        {
+            foreach (var item in control)
+            {
+                if (item is Button || item is Label)
+                {
+
+                }
+                else
+                {
+                    if (item.Tag != "" && item.Text != "")
+                    {
+                        if (!info.ContainsKey(item.Tag.ToString()))
+                        {
+                            info[item.Tag.ToString()] = item.Text;
+                        }
+                        else
+                        {
+
+                            info[item.Tag.ToString()] += " " + item.Text;
+                        }
+                    }
+                }
+
+                IEnumerable<Control> containers = item.Controls.OfType<Control>();
+
+                if (containers != null)
+                {
+                    foreach (var child in containers)
+                    {
+                        getChildWithValue(child);
+                    }
+                }
             }
         }
     }
