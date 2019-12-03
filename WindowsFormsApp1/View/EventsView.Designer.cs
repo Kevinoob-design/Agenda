@@ -36,9 +36,12 @@
             this.PanelStartEndHours = new System.Windows.Forms.TableLayoutPanel();
             this.lblStartHour = new System.Windows.Forms.Label();
             this.lblEndHour = new System.Windows.Forms.Label();
+            this.PanelDueDateNewEvent = new System.Windows.Forms.TableLayoutPanel();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.MainPanel.SuspendLayout();
             this.PanelTittlePriority.SuspendLayout();
             this.PanelStartEndHours.SuspendLayout();
+            this.PanelDueDateNewEvent.SuspendLayout();
             this.SuspendLayout();
             // 
             // MainPanel
@@ -48,6 +51,7 @@
             this.MainPanel.Controls.Add(this.PanelTittlePriority, 0, 0);
             this.MainPanel.Controls.Add(this.lblLocation, 0, 1);
             this.MainPanel.Controls.Add(this.PanelStartEndHours, 0, 3);
+            this.MainPanel.Controls.Add(this.PanelDueDateNewEvent, 0, 2);
             this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainPanel.Location = new System.Drawing.Point(0, 0);
             this.MainPanel.Name = "MainPanel";
@@ -155,6 +159,27 @@
             this.lblEndHour.Text = "End: 1:00 PM";
             this.lblEndHour.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // PanelDueDateNewEvent
+            // 
+            this.PanelDueDateNewEvent.ColumnCount = 2;
+            this.PanelDueDateNewEvent.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.PanelDueDateNewEvent.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.PanelDueDateNewEvent.Controls.Add(this.monthCalendar1, 1, 0);
+            this.PanelDueDateNewEvent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PanelDueDateNewEvent.Location = new System.Drawing.Point(3, 127);
+            this.PanelDueDateNewEvent.Name = "PanelDueDateNewEvent";
+            this.PanelDueDateNewEvent.RowCount = 1;
+            this.PanelDueDateNewEvent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.PanelDueDateNewEvent.Size = new System.Drawing.Size(629, 217);
+            this.PanelDueDateNewEvent.TabIndex = 3;
+            // 
+            // monthCalendar1
+            // 
+            this.monthCalendar1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.monthCalendar1.Location = new System.Drawing.Point(386, 27);
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.TabIndex = 0;
+            // 
             // EventsView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -169,6 +194,7 @@
             this.PanelTittlePriority.PerformLayout();
             this.PanelStartEndHours.ResumeLayout(false);
             this.PanelStartEndHours.PerformLayout();
+            this.PanelDueDateNewEvent.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -183,5 +209,7 @@
         private System.Windows.Forms.TableLayoutPanel PanelStartEndHours;
         private System.Windows.Forms.Label lblStartHour;
         private System.Windows.Forms.Label lblEndHour;
+        private System.Windows.Forms.TableLayoutPanel PanelDueDateNewEvent;
+        private System.Windows.Forms.MonthCalendar monthCalendar1;
     }
 }
