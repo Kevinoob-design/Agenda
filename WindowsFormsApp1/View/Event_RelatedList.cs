@@ -34,12 +34,17 @@ namespace WindowsFormsApp1.View
         private void Event_RelatedList_Load(object sender, EventArgs e)
         {
             Conexion.LoadDataEvent(dgvEventsRelated,Convert.ToInt32 ( contactID ) );
-
+            dgvEventsRelated.Columns["contactID"].Visible = false;
+            dgvEventsRelated.Columns["personalNumber"].Visible = false;
+            dgvEventsRelated.Columns["name"].Visible = false;
+            dgvEventsRelated.Columns["lastName"].Visible = false;
         }
+
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
             string events = dgvEventsRelated.CurrentRow.Cells["eventID"].Value.ToString();
+            
 
             Conexion.EliminarRelacion(Convert.ToInt32(events)); 
 
