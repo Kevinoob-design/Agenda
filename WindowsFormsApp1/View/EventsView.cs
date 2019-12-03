@@ -65,8 +65,6 @@ namespace View
             {
                 listBoxContacts.SelectedIndex = 0;
 
-                //setValues<Contact>(listControllers[i], listBoxContacts.SelectedIndex);
-
                 setChildWithValue<Event>(listBoxContacts.SelectedIndex, MainPanel);
             }
         }
@@ -107,13 +105,6 @@ namespace View
         private void btnLoad_Click(object sender, EventArgs e)
         {
             listEvent = Conexion.Load<Event>(null, "Select_Events");
-
-            //setChildWithValue(0, MainPanel);
-
-            //foreach (var item in listEvent)
-            //{
-            //    MessageBox.Show(item.startDate.ToString() + " " + item.endDate.ToString());
-            //}
         }
 
         private void getChildWithValue(params Control[] control)
@@ -169,25 +160,8 @@ namespace View
             {
                 if (item.Tag != null && item.Tag != "")
                 {
-                    if (true)
-                    {
-                        //info[item.Tag.ToString()] = item.Text;
-
-                        //item.Text = listEvent[i].details;
-
-                        Type type = typeof(T);
-
-                        item.Text = type.GetProperty(item.Tag.ToString()).GetValue(listEvent[i]).ToString();
-                    }
-                    else
-                    {
-                        //item.Text = "fucking";
-                        //info[item.Tag.ToString()] += " " + item.Text;
-
-                        Type type = typeof(Event);
-
-                        //item.Text = type.GetProperty(item.Tag.ToString()).GetValue(listEvent[i]).ToString();
-                    }
+                    Type type = typeof(T);
+                    item.Text = type.GetProperty(item.Tag.ToString()).GetValue(listEvent[i]).ToString();
                 }
 
                 IEnumerable<Control> containers = item.Controls.OfType<Control>();
