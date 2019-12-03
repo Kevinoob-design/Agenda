@@ -38,6 +38,11 @@ namespace WindowsFormsApp1.View
         private void ContactListRemove_Load(object sender, EventArgs e)
         {
             Conexion.LoadDataContactRemove(dgvCOntactListRemove, Convert.ToInt32 (eventoID) );
+            dgvCOntactListRemove.Columns["eventID"].Visible = false;
+            dgvCOntactListRemove.Columns["tittle"].Visible = false;
+            dgvCOntactListRemove.Columns["details"].Visible = false;
+            dgvCOntactListRemove.Columns["startDate"].Visible = false;
+            dgvCOntactListRemove.Columns["endDate"].Visible = false;
         }
     }
 }

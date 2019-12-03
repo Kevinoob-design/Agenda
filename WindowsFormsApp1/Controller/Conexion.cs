@@ -118,7 +118,7 @@ namespace Controller
 
         public static void LoadDataContact(DataGridView Dgv)
         {
-            SqlDataAdapter da = new SqlDataAdapter($"exec  Select__Contact_Event", con);
+            SqlDataAdapter da = new SqlDataAdapter($"exec  Select_Contact_Info", con);
 
             DataSet ds = new DataSet();
 
@@ -167,6 +167,7 @@ namespace Controller
 
         public static void InsertarRelacion(int contact, int events)
         {
+            MessageBox.Show(contact.ToString(), events.ToString());
             dr.Close();
             cmd = con.CreateCommand();
             cmd.CommandText = "EXECUTE R__Insertar__Contacts_Events @contactID,@eventID ";
