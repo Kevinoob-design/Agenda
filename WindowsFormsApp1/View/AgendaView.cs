@@ -134,7 +134,7 @@ namespace View
         {
             EventList d = new EventList();
             d.Show();
-            
+
         }
 
         private void AgendaView_Load(object sender, EventArgs e)

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.dgvEvents = new System.Windows.Forms.DataGridView();
+            this.btnAdd = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEvents)).BeginInit();
             this.SuspendLayout();
             // 
@@ -40,11 +41,22 @@
             this.dgvEvents.Size = new System.Drawing.Size(754, 150);
             this.dgvEvents.TabIndex = 0;
             // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(330, 205);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.TabIndex = 1;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.button1_Click);
+            // 
             // EventList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(778, 268);
+            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.dgvEvents);
             this.Name = "EventList";
             this.Text = "EventList";
@@ -57,5 +69,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvEvents;
+        private System.Windows.Forms.Button btnAdd;
     }
 }
