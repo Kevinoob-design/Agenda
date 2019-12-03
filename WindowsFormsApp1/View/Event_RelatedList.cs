@@ -40,9 +40,10 @@ namespace WindowsFormsApp1.View
         {
             string events = dgvEventsRelated.CurrentRow.Cells["eventID"].Value.ToString();
 
-            Conexion.EliminarRelacion(Convert.ToInt32(events) );
+            Conexion.EliminarRelacion(Convert.ToInt32(events) ); 
 
             this.Close();
+            
         }
     }
 }

@@ -124,7 +124,7 @@ namespace Controller
             cmd.Parameters.AddWithValue("@eventID", eventID);
             cmd.ExecuteNonQuery();
 
-            MessageBox.Show("Contacto Removido de lista");
+            MessageBox.Show("Evento Removido de lista");
         }
 
         public static void InsertarRelacion(int contact,int events)
@@ -136,7 +136,7 @@ namespace Controller
             cmd.Parameters.AddWithValue("@eventID", events);
             cmd.ExecuteNonQuery();
 
-            MessageBox.Show("Datos Relaciones");
+            MessageBox.Show("Evento Incertado");
             
         }
 
