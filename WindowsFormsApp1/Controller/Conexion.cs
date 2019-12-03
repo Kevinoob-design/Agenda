@@ -116,6 +116,34 @@ namespace Controller
 
         }
 
+        public static void LoadDataContact(DataGridView Dgv)
+        {
+
+            SqlDataAdapter da = new SqlDataAdapter($"exec  Select_Contact_Info", con);
+
+            DataSet ds = new DataSet();
+
+
+            da.Fill(ds, "CONCTACTS");
+            Dgv.DataSource = ds;
+            Dgv.DataMember = "CONCTACTS";
+
+        }
+
+        public static void LoadDataContactRemove(DataGridView Dgv)
+        {
+
+            SqlDataAdapter da = new SqlDataAdapter($"exec  Select__Contact_Event {8}", con);
+
+            DataSet ds = new DataSet();
+
+
+            da.Fill(ds, "CONTACTS");
+            Dgv.DataSource = ds;
+            Dgv.DataMember = "CONTACTS";
+
+        }
+
         public static void EliminarRelacion(int eventID)
         {
             dr.Close();

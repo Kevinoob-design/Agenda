@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Model;
 using Controller;
+using WindowsFormsApp1.View;
 
 namespace View
 {
@@ -172,6 +173,19 @@ namespace View
         {
             lblRange.Visible = true;
             lblRange.Text = $"Start: {monthCalendar1.SelectionStart.ToString("MM/dd/yy")} - End: {monthCalendar1.SelectionEnd.ToString("MM/dd/yy")}";
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            ContactList cont = new ContactList();
+            cont.Show();
+        }
+
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            ContactListRemove contactList = new ContactListRemove();
+
+            contactList.Show();
         }
     }
 }

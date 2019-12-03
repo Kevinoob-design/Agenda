@@ -114,6 +114,18 @@
     <Compile Include="View\ChildEventView\YearEventView.Designer.cs">
       <DependentUpon>YearEventView.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\ContactList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ContactList.Designer.cs">
+      <DependentUpon>ContactList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ContactListRemove.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ContactListRemove.Designer.cs">
+      <DependentUpon>ContactListRemove.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\EventList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,6 +173,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\ChildEventView\YearEventView.resx">
       <DependentUpon>YearEventView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ContactList.resx">
+      <DependentUpon>ContactList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ContactListRemove.resx">
+      <DependentUpon>ContactListRemove.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\EventList.resx">
       <DependentUpon>EventList.cs</DependentUpon>

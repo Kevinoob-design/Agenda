@@ -311,6 +311,7 @@
             this.btnAdd.TabIndex = 0;
             this.btnAdd.Text = "Add Contact";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnRemove
             // 
@@ -321,6 +322,7 @@
             this.btnRemove.TabIndex = 1;
             this.btnRemove.Text = "Remove Contact";
             this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
             // listBoxContacts
             // 
