@@ -32,6 +32,8 @@ namespace View
                 comboBoxAlert.Items.Add(item);
                 comboBoxAlert.SelectedIndex = 0;
             }
+
+            comboBoxTimeStart.SelectedIndex = 0;
         }
 
         private void refill()
@@ -68,12 +70,10 @@ namespace View
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            getChildWithValue(MainPanel);
+            info.Add(comboBoxTimeStart.Tag.ToString(), monthCalendar1.SelectionStart.ToString("MM/dd/yy"));
+            info.Add(comboBoxTimeEnd.Tag.ToString(), monthCalendar1.SelectionEnd.ToString("MM/dd/yy"));           
 
-            //foreach (var item in info)
-            //{
-            //    MessageBox.Show(item.ToString());
-            //}
+            getChildWithValue(MainPanel);
 
             Conexion.Save(info, "SP_Insertar_Eventos");
             info.Clear();
@@ -118,6 +118,12 @@ namespace View
                     }
                 }
             }
+        }
+
+        private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
+        {
+            
+
         }
     }
 }

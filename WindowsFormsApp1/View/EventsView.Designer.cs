@@ -59,8 +59,8 @@
             this.Start = new System.Windows.Forms.Label();
             this.panelLabels = new System.Windows.Forms.TableLayoutPanel();
             this.panelDueDateLoad = new System.Windows.Forms.TableLayoutPanel();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.btnLoad = new System.Windows.Forms.Button();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.MainPanel.SuspendLayout();
             this.PanelTittlePriority.SuspendLayout();
             this.PanelStartEndHours.SuspendLayout();
@@ -537,13 +537,6 @@
             this.panelDueDateLoad.Size = new System.Drawing.Size(303, 174);
             this.panelDueDateLoad.TabIndex = 4;
             // 
-            // monthCalendar1
-            // 
-            this.monthCalendar1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.monthCalendar1.Location = new System.Drawing.Point(9, 9);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 2;
-            // 
             // btnLoad
             // 
             this.btnLoad.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -555,6 +548,15 @@
             this.btnLoad.Text = "L\r\nO\r\nA\r\nD";
             this.btnLoad.UseVisualStyleBackColor = true;
             this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
+            // 
+            // monthCalendar1
+            // 
+            this.monthCalendar1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.monthCalendar1.Location = new System.Drawing.Point(9, 9);
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.TabIndex = 2;
+            this.monthCalendar1.Tag = "";
+            this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
             // 
             // EventsView
             // 
@@ -618,7 +620,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TableLayoutPanel panelDueDateLoad;
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.Button btnLoad;
+        private System.Windows.Forms.MonthCalendar monthCalendar1;
     }
 }
