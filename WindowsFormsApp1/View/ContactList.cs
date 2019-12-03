@@ -14,14 +14,21 @@ namespace WindowsFormsApp1.View
 {
     public partial class ContactList : Form
     {
+        private static string eventoID;
+
         public ContactList()
         {
             InitializeComponent();
         }
-
+        public ContactList(Event evento)
+        {
+            InitializeComponent();
+            eventoID = evento.eventID.ToString();
+        }
         private void btnAddContact_Click(object sender, EventArgs e)
         {
-
+            var contact = dgvContactList.CurrentRow.Cells["contactID"].Value.ToString();
+            Conexion.InsertarRelacion(Convert.ToInt32 (contact), Convert.ToInt32(eventoID) );
         }
 
         private void ContactList_Load(object sender, EventArgs e)

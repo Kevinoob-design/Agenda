@@ -24,7 +24,7 @@ namespace WindowsFormsApp1.View
 
         private void Event_RelatedList_Load(object sender, EventArgs e)
         {            
-            Conexion.LoadDataEvent(dgvEventsRelated,Convert.ToInt32 (contactID) );   
+            Conexion.LoadDataEvent(dgvEventsRelated);   
             
         }
 

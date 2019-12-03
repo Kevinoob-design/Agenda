@@ -14,6 +14,9 @@ namespace WindowsFormsApp1.View
 {
     public partial class ContactListRemove : Form
     {
+
+        private string eventoID;
+
         public ContactListRemove()
         {
             InitializeComponent();
@@ -22,8 +25,7 @@ namespace WindowsFormsApp1.View
         public ContactListRemove(Event evento)
         {
             InitializeComponent();
-
-            MessageBox.Show(evento.eventID.ToString());
+            eventoID = evento.eventID.ToString();
         }
         private void btnREmoveContact_Click(object sender, EventArgs e)
         {
@@ -32,7 +34,7 @@ namespace WindowsFormsApp1.View
 
         private void ContactListRemove_Load(object sender, EventArgs e)
         {
-            Conexion.LoadDataContactRemove(dgvCOntactListRemove);
+            Conexion.LoadDataContactRemove(dgvCOntactListRemove, Convert.ToInt32 (eventoID) );
         }
     }
 }

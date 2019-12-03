@@ -102,21 +102,7 @@ namespace Controller
             Dgv.DataMember = "EVENTS";
 
         }
-        public static void LoadDataEvent(DataGridView Dgv, int contactID)
-        {
-
-            SqlDataAdapter da = new SqlDataAdapter($"exec  Select__Contact_Event {contactID}", con);
-
-            DataSet ds = new DataSet();
-
-
-            da.Fill(ds, "EVENTS");
-            Dgv.DataSource = ds;
-            Dgv.DataMember = "EVENTS";
-
-        }
-
-        public static void LoadDataContact(DataGridView Dgv)
+        public static void LoadDataEvent(DataGridView Dgv)
         {
 
             SqlDataAdapter da = new SqlDataAdapter($"exec  Select_Contact_Info", con);
@@ -130,10 +116,9 @@ namespace Controller
 
         }
 
-        public static void LoadDataContactRemove(DataGridView Dgv)
+        public static void LoadDataContact(DataGridView Dgv)
         {
-
-            SqlDataAdapter da = new SqlDataAdapter($"exec  Select__Event_Contact {8}", con);
+            SqlDataAdapter da = new SqlDataAdapter($"exec  Select_Contact_Info", con);
 
             DataSet ds = new DataSet();
 
@@ -142,6 +127,23 @@ namespace Controller
             Dgv.DataSource = ds;
             Dgv.DataMember = "CONTACTS";
 
+            
+
+        }
+
+        public static void LoadDataContactRemove(DataGridView Dgv,int eventID)
+        {
+
+            SqlDataAdapter da = new SqlDataAdapter($"exec  Select_Contact_Info", con);
+
+            DataSet ds = new DataSet();
+
+
+            da.Fill(ds, "CONTACTS");
+            Dgv.DataSource = ds;
+            Dgv.DataMember = "CONTACTS";
+
+            MessageBox.Show("Datos incertados");
         }
 
         public static void EliminarRelacion(int eventID)
@@ -167,6 +169,7 @@ namespace Controller
             MessageBox.Show("Evento Incertado");
             
         }
+
 
         public static string countRows(string contactID)
         {
