@@ -176,6 +176,9 @@ namespace View
         private void listBoxContacts_SelectedIndexChanged(object sender, EventArgs e)
         {
             setChildWithValue<Event>(listBoxContacts.SelectedIndex, MainPanel);
+
+            var rowAmount = listEvent[listBoxContacts.SelectedIndex].eventID.ToString();
+            btnLoad.Text =  "Contac \n \n"+ Conexion.countRowsContact(rowAmount);
         }
 
         private void btnAdd_Click(object sender, EventArgs e)

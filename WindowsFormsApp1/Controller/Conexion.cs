@@ -191,5 +191,17 @@ namespace Controller
             string numberofRows = (ds.Tables[0].Rows.Count).ToString();      
             return numberofRows;
         }
+
+
+        public static string countRowsContact(string eventID)
+        {
+            SqlDataAdapter da = new SqlDataAdapter($"exec  Select__Event_Contact {eventID}", con);
+
+            DataSet ds = new DataSet();
+            da.Fill(ds, "CONTACTS");
+
+            string numberofRows = (ds.Tables[0].Rows.Count).ToString();
+            return numberofRows;
+        }
     }
 }

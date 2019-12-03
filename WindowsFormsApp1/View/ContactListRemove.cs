@@ -31,6 +31,8 @@ namespace WindowsFormsApp1.View
         {
             string contact = dgvCOntactListRemove.CurrentRow.Cells["contactID"].Value.ToString();
             Conexion.EliminarRelacionEvento(Convert.ToInt32 ( contact ) );
+
+            this.Close();
         }
 
         private void ContactListRemove_Load(object sender, EventArgs e)
