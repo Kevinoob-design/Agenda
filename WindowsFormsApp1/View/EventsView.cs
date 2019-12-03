@@ -37,6 +37,8 @@ namespace View
             }
 
             comboBoxTimeStart.SelectedIndex = 0;
+
+            init(null, "Select_Events");
         }
 
         private void refill()
@@ -46,6 +48,26 @@ namespace View
             foreach (var item in comboBoxTimeStart.Items)
             {
                 comboBoxTimeEnd.Items.Add(item);
+            }
+        }
+
+        private void init(Dictionary<string, string> items, string spName)
+        {
+            listEvent = Conexion.Load<Event>(items, spName);
+            listBoxContacts.Items.Clear();
+
+            foreach (Event item in listEvent)
+            {
+                listBoxContacts.Items.Add($"{item.tittle} {item.startDate}");
+            }
+
+            if (listBoxContacts.Items.Count != 0)
+            {
+                listBoxContacts.SelectedIndex = 0;
+
+                //setValues<Contact>(listControllers[i], listBoxContacts.SelectedIndex);
+
+                setChildWithValue<Event>(listBoxContacts.SelectedIndex, MainPanel);
             }
         }
 
@@ -86,7 +108,7 @@ namespace View
         {
             listEvent = Conexion.Load<Event>(null, "Select_Events");
 
-            setChildWithValue(0, MainPanel);
+            //setChildWithValue(0, MainPanel);
 
             //foreach (var item in listEvent)
             //{
@@ -130,19 +152,30 @@ namespace View
             }
         }
 
-        private void setChildWithValue(int i, params Control[] control)
+        private void setValues<T>(Control Control, int i)
+        {
+            IEnumerable<TextBox> controles = Control.Controls.OfType<TextBox>();
+
+            foreach (var control in controles)
+            {
+                Type type = typeof(T);
+                control.Text = type.GetProperty(control.Tag.ToString()).GetValue(listEvent[i]).ToString();
+            }
+        }
+
+        private void setChildWithValue<T>(int i, params Control[] control)
         {
             foreach (var item in control)
             {
-                if (item.Tag != null)
+                if (item.Tag != null && item.Tag != "")
                 {
-                    if (!info.ContainsKey(item.Tag.ToString()))
+                    if (true)
                     {
                         //info[item.Tag.ToString()] = item.Text;
 
-                        //item.Text = info;
+                        //item.Text = listEvent[i].details;
 
-                        Type type = typeof(Event);
+                        Type type = typeof(T);
 
                         item.Text = type.GetProperty(item.Tag.ToString()).GetValue(listEvent[i]).ToString();
                     }
@@ -153,7 +186,7 @@ namespace View
 
                         Type type = typeof(Event);
 
-                        item.Text = type.GetProperty(item.Tag.ToString()).GetValue(listEvent[i]).ToString();
+                        //item.Text = type.GetProperty(item.Tag.ToString()).GetValue(listEvent[i]).ToString();
                     }
                 }
 
@@ -163,7 +196,7 @@ namespace View
                 {
                     foreach (var child in containers)
                     {
-                        setChildWithValue(1, child);
+                        setChildWithValue<T>(i, child);
                     }
                 }
             }
@@ -175,17 +208,22 @@ namespace View
             lblRange.Text = $"Start: {monthCalendar1.SelectionStart.ToString("MM/dd/yy")} - End: {monthCalendar1.SelectionEnd.ToString("MM/dd/yy")}";
         }
 
+        private void listBoxContacts_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            setChildWithValue<Event>(listBoxContacts.SelectedIndex, MainPanel);
+        }
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            ContactList cont = new ContactList();
-            cont.Show();
+            ContactList ct = new ContactList();
+            ct.Show();
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-            ContactListRemove contactList = new ContactListRemove();
-
-            contactList.Show();
+            ContactListRemove ctr = new ContactListRemove();
+            ctr.Show();
+        
         }
     }
 }
