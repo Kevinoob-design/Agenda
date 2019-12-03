@@ -40,10 +40,5 @@ namespace WindowsFormsApp1.View
 
             this.Close();
         }
-
-        private void Algo(List<Contact> asd)
-        {
-
-        }
     }
 }

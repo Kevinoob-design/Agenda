@@ -287,6 +287,7 @@
             this.btnCheckEvent.TabIndex = 12;
             this.btnCheckEvent.Text = "Check";
             this.btnCheckEvent.UseVisualStyleBackColor = false;
+            this.btnCheckEvent.Click += new System.EventHandler(this.btnCheckEvent_Click);
             // 
             // lblEventCheck
             // 

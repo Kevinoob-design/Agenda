@@ -11,6 +11,7 @@ namespace Controller
         static SqlConnection con;
         static SqlCommand cmd;
         static SqlDataReader dr;
+        static SqlDataAdapter da;
 
         static string SourcePC;
         static string InitialCat;
@@ -87,6 +88,8 @@ namespace Controller
             cmd.ExecuteNonQuery();
         }
 
+
+
         public static void LoadData(DataGridView Dgv)
         {
             SqlDataAdapter da = new SqlDataAdapter("exec Select_Events_Completly", con);
@@ -99,6 +102,30 @@ namespace Controller
             Dgv.DataMember = "EVENTS";
 
         }
+        public static void LoadDataEvent(DataGridView Dgv, int contactID)
+        {
+
+            SqlDataAdapter da = new SqlDataAdapter($"exec  Select__Contact_Event {contactID}", con);
+
+            DataSet ds = new DataSet();
+
+
+            da.Fill(ds, "EVENTS");
+            Dgv.DataSource = ds;
+            Dgv.DataMember = "EVENTS";
+
+        }
+
+        public static void EliminarRelacion(int eventID)
+        {
+            dr.Close();
+            cmd = con.CreateCommand();
+            cmd.CommandText = "EXECUTE R__Eliminar__Events_In_Contacts @eventID";
+            cmd.Parameters.AddWithValue("@eventID", eventID);
+            cmd.ExecuteNonQuery();
+
+            MessageBox.Show("Contacto Removido de lista");
+        }
 
         public static void InsertarRelacion(int contact,int events)
         {
@@ -110,6 +137,18 @@ namespace Controller
             cmd.ExecuteNonQuery();
 
             MessageBox.Show("Datos Relaciones");
+            
+        }
+
+        public static string countRows(string contactID)
+        {
+            SqlDataAdapter da = new SqlDataAdapter($"exec  Select__Contact_Event {contactID}", con);
+
+            DataSet ds = new DataSet();
+            da.Fill(ds, "EVENTS");
+
+            string numberofRows = (ds.Tables[0].Rows.Count).ToString();      
+            return numberofRows;
         }
     }
 }
