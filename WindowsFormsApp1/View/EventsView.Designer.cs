@@ -331,6 +331,7 @@
             this.listBoxContacts.Size = new System.Drawing.Size(302, 164);
             this.listBoxContacts.TabIndex = 1;
             this.listBoxContacts.Tag = "";
+            this.listBoxContacts.SelectedIndexChanged += new System.EventHandler(this.listBoxContacts_SelectedIndexChanged);
             // 
             // txtFiler
             // 
