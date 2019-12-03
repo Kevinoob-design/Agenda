@@ -226,6 +226,7 @@
             this.btnUpdate.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.Location = new System.Drawing.Point(160, 3);
+            this.btnUpdate.MaximumSize = new System.Drawing.Size(151, 27);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(151, 27);
             this.btnUpdate.TabIndex = 0;
@@ -598,7 +599,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(635, 422);
             this.Controls.Add(this.MainPanel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EventsView";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "EventsView";
             this.MainPanel.ResumeLayout(false);
             this.PanelTittlePriority.ResumeLayout(false);

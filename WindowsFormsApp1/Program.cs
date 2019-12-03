@@ -22,7 +22,11 @@ namespace View
             Application.SetCompatibleTextRenderingDefault(false);
 
             //Application.Run(new AgendaView());
-            Application.Run(new EventsView());
+            //Application.Run(new EventsView());
+
+            Application.Run(new SplitMainView());
+
+            
 
             //Application.Run(new MonthEventView(new MonthView()));
 

@@ -156,20 +156,5 @@ namespace View
 
             AgendaView_Load(null, null);
         }
-
-        //public void BringFormChild(object FormHijo, TableLayoutPanel panel)
-        //{
-        //    //if (panel.Controls.Count > 0)
-        //    //{
-        //    //    panel.Controls.RemoveAt(0);
-        //    //}
-
-        //    Form NewForm = FormHijo as Form;
-        //    NewForm.TopLevel = false;
-        //    NewForm.Dock = DockStyle.Fill;
-        //    panel.Controls.Add(NewForm);
-        //    panel.Tag = NewForm;
-        //    NewForm.Show();
-        //}
     }
 }
