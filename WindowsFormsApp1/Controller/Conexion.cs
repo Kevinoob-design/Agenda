@@ -17,7 +17,7 @@ namespace Controller
         static string IntSecuirity;
         static string UserID;
 
-       static Conexion()
+        static Conexion()
         {
             //SourcePC = "Data source = Hector-Macbook;";
             //SourcePC = "Data source = Hector-PC;";
@@ -46,7 +46,7 @@ namespace Controller
                 {
                     cmd.Parameters.AddWithValue($"@{item.Key}", item.Value);
                 }
-            } 
+            }
 
             dr = cmd.ExecuteReader();
 
@@ -93,11 +93,23 @@ namespace Controller
 
             DataSet ds = new DataSet();
 
-            
+
             da.Fill(ds, "EVENTS");
             Dgv.DataSource = ds;
-            Dgv.DataMember = "EVENTS";    
-            
+            Dgv.DataMember = "EVENTS";
+
+        }
+
+        public static void InsertarRelacion(int contact,int events)
+        {
+            dr.Close();
+            cmd = con.CreateCommand();
+            cmd.CommandText = "EXECUTE R__Insertar__Contacts_Events @contactID,@eventID ";
+            cmd.Parameters.AddWithValue("@contactID", contact);
+            cmd.Parameters.AddWithValue("@eventID", events);
+            cmd.ExecuteNonQuery();
+
+            MessageBox.Show("Datos Relaciones");
         }
     }
 }
