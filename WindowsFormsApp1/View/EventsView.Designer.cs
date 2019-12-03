@@ -30,7 +30,17 @@
         {
             this.MainPanel = new System.Windows.Forms.TableLayoutPanel();
             this.PanelTittlePriority = new System.Windows.Forms.TableLayoutPanel();
+            this.panelPriority = new System.Windows.Forms.TableLayoutPanel();
+            this.lblPriority = new System.Windows.Forms.Label();
+            this.comboBoxAlert = new System.Windows.Forms.ComboBox();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.txtTittle = new System.Windows.Forms.TextBox();
+            this.lblRange = new System.Windows.Forms.Label();
             this.PanelStartEndHours = new System.Windows.Forms.TableLayoutPanel();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
             this.PanelDueDateNewEvent = new System.Windows.Forms.TableLayoutPanel();
             this.panelContactsEdit = new System.Windows.Forms.TableLayoutPanel();
             this.panelAddDelete = new System.Windows.Forms.TableLayoutPanel();
@@ -43,36 +53,29 @@
             this.comboBoxTimeStart = new System.Windows.Forms.ComboBox();
             this.comboBoxTimeEnd = new System.Windows.Forms.ComboBox();
             this.comboBoxRepeat = new System.Windows.Forms.ComboBox();
-            this.panelPriority = new System.Windows.Forms.TableLayoutPanel();
-            this.lblPriority = new System.Windows.Forms.Label();
-            this.comboBoxAlert = new System.Windows.Forms.ComboBox();
-            this.txtTittle = new System.Windows.Forms.TextBox();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnClear = new System.Windows.Forms.Button();
-            this.panelDetailsLocation = new System.Windows.Forms.TableLayoutPanel();
-            this.txtDetails = new System.Windows.Forms.TextBox();
-            this.txtLocation = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.Start = new System.Windows.Forms.Label();
             this.panelLabels = new System.Windows.Forms.TableLayoutPanel();
+            this.Start = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.panelDueDateLoad = new System.Windows.Forms.TableLayoutPanel();
-            this.btnLoad = new System.Windows.Forms.Button();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.btnLoad = new System.Windows.Forms.Button();
+            this.panelDetailsLocation = new System.Windows.Forms.TableLayoutPanel();
+            this.txtLocation = new System.Windows.Forms.TextBox();
+            this.txtDetails = new System.Windows.Forms.TextBox();
             this.MainPanel.SuspendLayout();
             this.PanelTittlePriority.SuspendLayout();
+            this.panelPriority.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.PanelStartEndHours.SuspendLayout();
             this.PanelDueDateNewEvent.SuspendLayout();
             this.panelContactsEdit.SuspendLayout();
             this.panelAddDelete.SuspendLayout();
             this.panelDueDateHorsFre.SuspendLayout();
             this.panelHorsFrequency.SuspendLayout();
-            this.panelPriority.SuspendLayout();
-            this.panelDetailsLocation.SuspendLayout();
             this.panelLabels.SuspendLayout();
             this.panelDueDateLoad.SuspendLayout();
+            this.panelDetailsLocation.SuspendLayout();
             this.SuspendLayout();
             // 
             // MainPanel
@@ -100,7 +103,7 @@
             this.PanelTittlePriority.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
             this.PanelTittlePriority.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.PanelTittlePriority.Controls.Add(this.panelPriority, 1, 0);
-            this.PanelTittlePriority.Controls.Add(this.txtTittle, 0, 0);
+            this.PanelTittlePriority.Controls.Add(this.tableLayoutPanel1, 0, 0);
             this.PanelTittlePriority.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelTittlePriority.Location = new System.Drawing.Point(3, 3);
             this.PanelTittlePriority.Name = "PanelTittlePriority";
@@ -108,6 +111,84 @@
             this.PanelTittlePriority.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.PanelTittlePriority.Size = new System.Drawing.Size(629, 54);
             this.PanelTittlePriority.TabIndex = 0;
+            // 
+            // panelPriority
+            // 
+            this.panelPriority.ColumnCount = 1;
+            this.panelPriority.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelPriority.Controls.Add(this.lblPriority, 0, 0);
+            this.panelPriority.Controls.Add(this.comboBoxAlert, 0, 1);
+            this.panelPriority.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelPriority.Location = new System.Drawing.Point(506, 3);
+            this.panelPriority.Name = "panelPriority";
+            this.panelPriority.RowCount = 2;
+            this.panelPriority.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelPriority.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelPriority.Size = new System.Drawing.Size(120, 48);
+            this.panelPriority.TabIndex = 1;
+            // 
+            // lblPriority
+            // 
+            this.lblPriority.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblPriority.AutoSize = true;
+            this.lblPriority.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPriority.Location = new System.Drawing.Point(3, 0);
+            this.lblPriority.Name = "lblPriority";
+            this.lblPriority.Size = new System.Drawing.Size(114, 24);
+            this.lblPriority.TabIndex = 2;
+            this.lblPriority.Text = "Priority";
+            this.lblPriority.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // comboBoxAlert
+            // 
+            this.comboBoxAlert.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.comboBoxAlert.FormattingEnabled = true;
+            this.comboBoxAlert.Location = new System.Drawing.Point(3, 27);
+            this.comboBoxAlert.Name = "comboBoxAlert";
+            this.comboBoxAlert.Size = new System.Drawing.Size(114, 21);
+            this.comboBoxAlert.TabIndex = 3;
+            this.comboBoxAlert.Tag = "priority";
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.txtTittle, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.lblRange, 0, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 15F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(497, 48);
+            this.tableLayoutPanel1.TabIndex = 2;
+            // 
+            // txtTittle
+            // 
+            this.txtTittle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtTittle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTittle.Location = new System.Drawing.Point(3, 18);
+            this.txtTittle.Multiline = true;
+            this.txtTittle.Name = "txtTittle";
+            this.txtTittle.Size = new System.Drawing.Size(491, 27);
+            this.txtTittle.TabIndex = 3;
+            this.txtTittle.Tag = "tittle";
+            this.txtTittle.Text = "TITTLE";
+            this.txtTittle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lblRange
+            // 
+            this.lblRange.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.lblRange.AutoSize = true;
+            this.lblRange.Location = new System.Drawing.Point(187, 0);
+            this.lblRange.Name = "lblRange";
+            this.lblRange.Size = new System.Drawing.Size(123, 15);
+            this.lblRange.TabIndex = 0;
+            this.lblRange.Text = "12/2/2019 -  12/2/2019";
+            this.lblRange.Visible = false;
             // 
             // PanelStartEndHours
             // 
@@ -127,6 +208,51 @@
             this.PanelStartEndHours.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.PanelStartEndHours.Size = new System.Drawing.Size(629, 33);
             this.PanelStartEndHours.TabIndex = 2;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Location = new System.Drawing.Point(3, 3);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(151, 27);
+            this.btnSave.TabIndex = 0;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Location = new System.Drawing.Point(160, 3);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(151, 27);
+            this.btnUpdate.TabIndex = 0;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.Location = new System.Drawing.Point(317, 3);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(151, 27);
+            this.btnDelete.TabIndex = 0;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            // 
+            // btnClear
+            // 
+            this.btnClear.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.Location = new System.Drawing.Point(474, 3);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(152, 27);
+            this.btnClear.TabIndex = 0;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
             // 
             // PanelDueDateNewEvent
             // 
@@ -204,7 +330,7 @@
             this.listBoxContacts.Name = "listBoxContacts";
             this.listBoxContacts.Size = new System.Drawing.Size(302, 164);
             this.listBoxContacts.TabIndex = 1;
-            this.listBoxContacts.Tag = "invites";
+            this.listBoxContacts.Tag = "";
             // 
             // txtFiler
             // 
@@ -328,181 +454,6 @@
             this.comboBoxRepeat.TabIndex = 2;
             this.comboBoxRepeat.Tag = "frequency";
             // 
-            // panelPriority
-            // 
-            this.panelPriority.ColumnCount = 1;
-            this.panelPriority.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.panelPriority.Controls.Add(this.lblPriority, 0, 0);
-            this.panelPriority.Controls.Add(this.comboBoxAlert, 0, 1);
-            this.panelPriority.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelPriority.Location = new System.Drawing.Point(506, 3);
-            this.panelPriority.Name = "panelPriority";
-            this.panelPriority.RowCount = 2;
-            this.panelPriority.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.panelPriority.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.panelPriority.Size = new System.Drawing.Size(120, 48);
-            this.panelPriority.TabIndex = 1;
-            // 
-            // lblPriority
-            // 
-            this.lblPriority.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblPriority.AutoSize = true;
-            this.lblPriority.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPriority.Location = new System.Drawing.Point(3, 0);
-            this.lblPriority.Name = "lblPriority";
-            this.lblPriority.Size = new System.Drawing.Size(114, 24);
-            this.lblPriority.TabIndex = 2;
-            this.lblPriority.Text = "Priority";
-            this.lblPriority.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // comboBoxAlert
-            // 
-            this.comboBoxAlert.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.comboBoxAlert.FormattingEnabled = true;
-            this.comboBoxAlert.Location = new System.Drawing.Point(3, 27);
-            this.comboBoxAlert.Name = "comboBoxAlert";
-            this.comboBoxAlert.Size = new System.Drawing.Size(114, 21);
-            this.comboBoxAlert.TabIndex = 3;
-            this.comboBoxAlert.Tag = "priority";
-            // 
-            // txtTittle
-            // 
-            this.txtTittle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtTittle.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTittle.Location = new System.Drawing.Point(3, 3);
-            this.txtTittle.Multiline = true;
-            this.txtTittle.Name = "txtTittle";
-            this.txtTittle.Size = new System.Drawing.Size(497, 48);
-            this.txtTittle.TabIndex = 2;
-            this.txtTittle.Tag = "tittle";
-            this.txtTittle.Text = "TITTLE";
-            this.txtTittle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // btnSave
-            // 
-            this.btnSave.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(3, 3);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(151, 27);
-            this.btnSave.TabIndex = 0;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(160, 3);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(151, 27);
-            this.btnUpdate.TabIndex = 0;
-            this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(317, 3);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(151, 27);
-            this.btnDelete.TabIndex = 0;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            // 
-            // btnClear
-            // 
-            this.btnClear.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(474, 3);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(152, 27);
-            this.btnClear.TabIndex = 0;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = true;
-            // 
-            // panelDetailsLocation
-            // 
-            this.panelDetailsLocation.ColumnCount = 2;
-            this.panelDetailsLocation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.panelDetailsLocation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.panelDetailsLocation.Controls.Add(this.txtLocation, 1, 0);
-            this.panelDetailsLocation.Controls.Add(this.txtDetails, 0, 0);
-            this.panelDetailsLocation.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDetailsLocation.Location = new System.Drawing.Point(3, 63);
-            this.panelDetailsLocation.Name = "panelDetailsLocation";
-            this.panelDetailsLocation.RowCount = 1;
-            this.panelDetailsLocation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.panelDetailsLocation.Size = new System.Drawing.Size(629, 70);
-            this.panelDetailsLocation.TabIndex = 4;
-            // 
-            // txtDetails
-            // 
-            this.txtDetails.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDetails.Location = new System.Drawing.Point(3, 3);
-            this.txtDetails.Multiline = true;
-            this.txtDetails.Name = "txtDetails";
-            this.txtDetails.Size = new System.Drawing.Size(308, 64);
-            this.txtDetails.TabIndex = 0;
-            this.txtDetails.Tag = "details";
-            this.txtDetails.Text = "DETAILS";
-            // 
-            // txtLocation
-            // 
-            this.txtLocation.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLocation.Location = new System.Drawing.Point(317, 3);
-            this.txtLocation.Multiline = true;
-            this.txtLocation.Name = "txtLocation";
-            this.txtLocation.Size = new System.Drawing.Size(309, 64);
-            this.txtLocation.TabIndex = 5;
-            this.txtLocation.Tag = "location";
-            this.txtLocation.Text = "LOCATION";
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(203, -6);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(97, 20);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Frecuency";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(103, -6);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(94, 20);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "End";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Start
-            // 
-            this.Start.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Start.AutoSize = true;
-            this.Start.Location = new System.Drawing.Point(3, -6);
-            this.Start.Name = "Start";
-            this.Start.Size = new System.Drawing.Size(94, 20);
-            this.Start.TabIndex = 0;
-            this.Start.Text = "Start";
-            this.Start.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // panelLabels
             // 
             this.panelLabels.ColumnCount = 3;
@@ -522,6 +473,45 @@
             this.panelLabels.Size = new System.Drawing.Size(303, 14);
             this.panelLabels.TabIndex = 3;
             // 
+            // Start
+            // 
+            this.Start.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Start.AutoSize = true;
+            this.Start.Location = new System.Drawing.Point(3, -6);
+            this.Start.Name = "Start";
+            this.Start.Size = new System.Drawing.Size(95, 20);
+            this.Start.TabIndex = 0;
+            this.Start.Text = "Start";
+            this.Start.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(104, -6);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(95, 20);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "End";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(205, -6);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(95, 20);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Frecuency";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // panelDueDateLoad
             // 
             this.panelDueDateLoad.ColumnCount = 2;
@@ -537,6 +527,15 @@
             this.panelDueDateLoad.Size = new System.Drawing.Size(303, 174);
             this.panelDueDateLoad.TabIndex = 4;
             // 
+            // monthCalendar1
+            // 
+            this.monthCalendar1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.monthCalendar1.Location = new System.Drawing.Point(9, 9);
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.TabIndex = 2;
+            this.monthCalendar1.Tag = "";
+            this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
+            // 
             // btnLoad
             // 
             this.btnLoad.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -549,14 +548,44 @@
             this.btnLoad.UseVisualStyleBackColor = true;
             this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
-            // monthCalendar1
+            // panelDetailsLocation
             // 
-            this.monthCalendar1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.monthCalendar1.Location = new System.Drawing.Point(9, 9);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 2;
-            this.monthCalendar1.Tag = "";
-            this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
+            this.panelDetailsLocation.ColumnCount = 2;
+            this.panelDetailsLocation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelDetailsLocation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelDetailsLocation.Controls.Add(this.txtLocation, 1, 0);
+            this.panelDetailsLocation.Controls.Add(this.txtDetails, 0, 0);
+            this.panelDetailsLocation.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelDetailsLocation.Location = new System.Drawing.Point(3, 63);
+            this.panelDetailsLocation.Name = "panelDetailsLocation";
+            this.panelDetailsLocation.RowCount = 1;
+            this.panelDetailsLocation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panelDetailsLocation.Size = new System.Drawing.Size(629, 70);
+            this.panelDetailsLocation.TabIndex = 4;
+            // 
+            // txtLocation
+            // 
+            this.txtLocation.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLocation.Location = new System.Drawing.Point(317, 3);
+            this.txtLocation.Multiline = true;
+            this.txtLocation.Name = "txtLocation";
+            this.txtLocation.Size = new System.Drawing.Size(309, 64);
+            this.txtLocation.TabIndex = 5;
+            this.txtLocation.Tag = "location";
+            this.txtLocation.Text = "LOCATION";
+            // 
+            // txtDetails
+            // 
+            this.txtDetails.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDetails.Location = new System.Drawing.Point(3, 3);
+            this.txtDetails.Multiline = true;
+            this.txtDetails.Name = "txtDetails";
+            this.txtDetails.Size = new System.Drawing.Size(308, 64);
+            this.txtDetails.TabIndex = 0;
+            this.txtDetails.Tag = "details";
+            this.txtDetails.Text = "DETAILS";
             // 
             // EventsView
             // 
@@ -568,7 +597,10 @@
             this.Text = "EventsView";
             this.MainPanel.ResumeLayout(false);
             this.PanelTittlePriority.ResumeLayout(false);
-            this.PanelTittlePriority.PerformLayout();
+            this.panelPriority.ResumeLayout(false);
+            this.panelPriority.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.PanelStartEndHours.ResumeLayout(false);
             this.PanelDueDateNewEvent.ResumeLayout(false);
             this.panelContactsEdit.ResumeLayout(false);
@@ -576,13 +608,11 @@
             this.panelAddDelete.ResumeLayout(false);
             this.panelDueDateHorsFre.ResumeLayout(false);
             this.panelHorsFrequency.ResumeLayout(false);
-            this.panelPriority.ResumeLayout(false);
-            this.panelPriority.PerformLayout();
-            this.panelDetailsLocation.ResumeLayout(false);
-            this.panelDetailsLocation.PerformLayout();
             this.panelLabels.ResumeLayout(false);
             this.panelLabels.PerformLayout();
             this.panelDueDateLoad.ResumeLayout(false);
+            this.panelDetailsLocation.ResumeLayout(false);
+            this.panelDetailsLocation.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -607,7 +637,6 @@
         private System.Windows.Forms.TableLayoutPanel panelPriority;
         private System.Windows.Forms.Label lblPriority;
         private System.Windows.Forms.ComboBox comboBoxAlert;
-        private System.Windows.Forms.TextBox txtTittle;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDelete;
@@ -622,5 +651,8 @@
         private System.Windows.Forms.TableLayoutPanel panelDueDateLoad;
         private System.Windows.Forms.Button btnLoad;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TextBox txtTittle;
+        private System.Windows.Forms.Label lblRange;
     }
 }

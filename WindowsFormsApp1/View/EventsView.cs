@@ -16,6 +16,8 @@ namespace View
     {
         Dictionary<string, string> info = new Dictionary<string, string>();
 
+        List<Event> listEvent = new List<Event>();
+
         public EventsView()
         {
             InitializeComponent();
@@ -81,7 +83,14 @@ namespace View
 
         private void btnLoad_Click(object sender, EventArgs e)
         {
+            listEvent = Conexion.Load<Event>(null, "Select_Events");
 
+            setChildWithValue(0, MainPanel);
+
+            //foreach (var item in listEvent)
+            //{
+            //    MessageBox.Show(item.startDate.ToString() + " " + item.endDate.ToString());
+            //}
         }
 
         private void getChildWithValue(params Control[] control)
@@ -120,10 +129,49 @@ namespace View
             }
         }
 
+        private void setChildWithValue(int i, params Control[] control)
+        {
+            foreach (var item in control)
+            {
+                if (item.Tag != null)
+                {
+                    if (!info.ContainsKey(item.Tag.ToString()))
+                    {
+                        //info[item.Tag.ToString()] = item.Text;
+
+                        //item.Text = info;
+
+                        Type type = typeof(Event);
+
+                        item.Text = type.GetProperty(item.Tag.ToString()).GetValue(listEvent[i]).ToString();
+                    }
+                    else
+                    {
+                        //item.Text = "fucking";
+                        //info[item.Tag.ToString()] += " " + item.Text;
+
+                        Type type = typeof(Event);
+
+                        item.Text = type.GetProperty(item.Tag.ToString()).GetValue(listEvent[i]).ToString();
+                    }
+                }
+
+                IEnumerable<Control> containers = item.Controls.OfType<Control>();
+
+                if (containers != null)
+                {
+                    foreach (var child in containers)
+                    {
+                        setChildWithValue(1, child);
+                    }
+                }
+            }
+        }
+
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
         {
-            
-
+            lblRange.Visible = true;
+            lblRange.Text = $"Start: {monthCalendar1.SelectionStart.ToString("MM/dd/yy")} - End: {monthCalendar1.SelectionEnd.ToString("MM/dd/yy")}";
         }
     }
 }

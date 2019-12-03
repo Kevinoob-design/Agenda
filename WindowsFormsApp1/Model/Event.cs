@@ -9,7 +9,7 @@
         public string endDate      { get; set; }
         public string frequency { get; set; }
         public string priority { get; set; }
-        public string invites   { get; set; }
+        //public string invites   { get; set; }
         public string details     { get; set; }
     }
 }
