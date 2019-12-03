@@ -21,7 +21,7 @@ namespace View
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            //Application.Run(new AgendaView());
+            Application.Run(new AgendaView());
             Application.Run(new EventsView());
 
             //Application.Run(new MonthEventView(new MonthView()));

@@ -67,6 +67,8 @@ namespace View
 
                 setChildWithValue<Event>(listBoxContacts.SelectedIndex, MainPanel);
             }
+
+            info.Clear();
         }
 
         private void comboBoxTimeStart_SelectedIndexChanged(object sender, EventArgs e)
@@ -99,7 +101,7 @@ namespace View
             getChildWithValue(MainPanel);
 
             Conexion.Save(info, "SP_Insertar_Eventos");
-            info.Clear();
+            init(null, "Select_Events");
         }
 
         private void btnLoad_Click(object sender, EventArgs e)
@@ -140,17 +142,6 @@ namespace View
                         getChildWithValue(child);
                     }
                 }
-            }
-        }
-
-        private void setValues<T>(Control Control, int i)
-        {
-            IEnumerable<TextBox> controles = Control.Controls.OfType<TextBox>();
-
-            foreach (var control in controles)
-            {
-                Type type = typeof(T);
-                control.Text = type.GetProperty(control.Tag.ToString()).GetValue(listEvent[i]).ToString();
             }
         }
 
@@ -198,6 +189,22 @@ namespace View
             ContactListRemove ctr = new ContactListRemove();
             ctr.Show();
         
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            info.Add("eventID", listEvent[listBoxContacts.SelectedIndex].eventID);
+            Conexion.Save(info, "SP_Eliminar_Eventos");
+            init(null, "Select_Events");
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            info.Add("eventID", listEvent[listBoxContacts.SelectedIndex].eventID);
+            getChildWithValue(MainPanel);
+
+            Conexion.Save(info, "SP_Modificar_Eventos");
+            init(null, "Select_Events");
         }
     }
 }
