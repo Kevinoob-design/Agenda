@@ -102,23 +102,23 @@ namespace Controller
             Dgv.DataMember = "EVENTS";
 
         }
-        public static void LoadDataEvent(DataGridView Dgv)
+        public static void LoadDataEvent(DataGridView Dgv,int contactID)
         {
 
-            SqlDataAdapter da = new SqlDataAdapter($"exec  Select_Contact_Info", con);
+            SqlDataAdapter da = new SqlDataAdapter($"exec  Select__Contact_Event {contactID}", con);
 
             DataSet ds = new DataSet();
 
 
-            da.Fill(ds, "CONCTACTS");
+            da.Fill(ds, "EVENTS");
             Dgv.DataSource = ds;
-            Dgv.DataMember = "CONCTACTS";
+            Dgv.DataMember = "EVENTS";
 
         }
 
         public static void LoadDataContact(DataGridView Dgv)
         {
-            SqlDataAdapter da = new SqlDataAdapter($"exec  Select_Contact_Info", con);
+            SqlDataAdapter da = new SqlDataAdapter($"exec  Select__Contact_Event", con);
 
             DataSet ds = new DataSet();
 
