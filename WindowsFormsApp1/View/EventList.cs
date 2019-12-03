@@ -19,9 +19,10 @@ namespace WindowsFormsApp1.View
             InitializeComponent();
         }
 
-        private EventList(List<Contact> Contacts)
+        public EventList(Contact contacts)
         {
-           
+            InitializeComponent();
+            MessageBox.Show(contacts.contactID.ToString());
         }
 
         private void EventList_Load(object sender, EventArgs e)
@@ -31,7 +32,7 @@ namespace WindowsFormsApp1.View
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show( dgvEvents.CurrentRow.Cells["eventID"].Value.ToString() );
+            MessageBox.Show(dgvEvents.CurrentRow.Cells["eventID"].Value.ToString());
         }
 
         private void Algo(List<Contact> asd)

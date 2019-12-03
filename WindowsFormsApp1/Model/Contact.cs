@@ -3,7 +3,7 @@
     /// <summary>
     /// Class contact with information releated to certain contact
     /// </summary>
-    struct Contact
+    public struct Contact
     {
         /// <summary>
         /// Basic information that belongs to a contact.

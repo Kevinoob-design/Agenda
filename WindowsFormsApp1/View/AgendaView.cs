@@ -132,9 +132,8 @@ namespace View
       
         private void btnAddEvent_Click_1(object sender, EventArgs e)
         {
-            EventList d = new EventList();
+            EventList d = new EventList(contacts[listBoxContacts.SelectedIndex]);
             d.Show();
-
         }
 
         private void AgendaView_Load(object sender, EventArgs e)
