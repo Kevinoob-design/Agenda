@@ -133,7 +133,7 @@ namespace Controller
         public static void LoadDataContactRemove(DataGridView Dgv)
         {
 
-            SqlDataAdapter da = new SqlDataAdapter($"exec  Select__Contact_Event {8}", con);
+            SqlDataAdapter da = new SqlDataAdapter($"exec  Select__Event_Contact {8}", con);
 
             DataSet ds = new DataSet();
 

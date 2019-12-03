@@ -19,9 +19,13 @@ namespace WindowsFormsApp1.View
             InitializeComponent();
         }
 
-        private void btnREmoveContact_Click(object sender, EventArgs e)
+        public ContactListRemove(Contact contact)
         {
 
+        }
+        private void btnREmoveContact_Click(object sender, EventArgs e)
+        {
+            
         }
 
         private void ContactListRemove_Load(object sender, EventArgs e)

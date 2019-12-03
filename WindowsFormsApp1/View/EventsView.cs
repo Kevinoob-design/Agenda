@@ -189,7 +189,7 @@ namespace View
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            ContactList ct = new ContactList();
+            ContactListRemove ct = new ContactListRemove();
             ct.Show();
         }
 
